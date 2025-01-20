@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEC-335 Course Landing Page</title>
+</head>
+<body>
+    <h1>SEC-335 - Security Fundamentals</h1>
+    <p>Welcome to the SEC-335 course repository. Navigate through sections:</p>
+    <ul>
+        <li><a href="journal.html">Course Journal</a></li>
+        <li><a href="recon.html">Passive Reconnaissance</a></li>
+    </ul>
+</body>
+</html>
