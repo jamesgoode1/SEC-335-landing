@@ -1,0 +1,26 @@
+Host Discovery (Lab 2.1)
+
+Ping Script
+
+#!/bin/bash
+for ip in {2..50}; do ping -c 1 -W 1 10.0.5.$ip | grep "bytes from" | cut -d " " -f 4 | tr -d ":" >> sweep.txt
+
+
+Fping
+
+#!/bin/bash
+sudo fping -a -g 10.0.5.2 10.0.5.50 2>/dev/null >> sweep2.txt
+
+Nmap Range Scan
+
+#!/bin/bash
+sudo nmap -sn 10.0.5.2-50 | grep "Nmap scan report" | awk '{print $5}' >> sweep3.txt
+
+
+Reflection: 
+
+Ping: Simple and effective for individual hosts but requires extra processing with grep, cut, and tr.
+
+Fping: Using (2>/dev/null) to suppress errors  made the results cleaner.
+
+Nmap: More detailed host discovery and requires administrative privileges. It uses of TCP and ICMP as opposed to ping and fping icmp. 
