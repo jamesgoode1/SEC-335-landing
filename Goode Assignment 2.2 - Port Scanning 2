@@ -1,0 +1,14 @@
+-p: Specify ports
+Used to focus on specific ports such as 139 and 445.
+Example: nmap -p 139,445 10.0.17.40
+
+-sV: Version Detection
+Used the -sV flag to gather version information about services running on the exposed ports.
+Example: nmap -p 139,445 -sV 10.0.17.40
+
+-A: Aggressive Scan
+Enables OS detection, version detection, script scanning, and traceroute.
+Example: nmap -p 139,445 -A 10.0.17.40
+
+This lab helped deepen my understanding of Nmap and its capabilities.I plan to explore more advanced Nmap features and build more scanning skills for future penetration testing and hopefully build on this lab’s experience.
+
