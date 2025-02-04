@@ -1,0 +1,5 @@
+cat zt.txt | grep -E 'IN A' | awk '{print $1","$5}' | grep -v ";"
+sudo nmap -sL 10.0.5.0/24 --dns-server 10.0.5.22 | awk '/Nmap scan report/ && /\(/ {print $5, $6}'
+
+
+reflection
